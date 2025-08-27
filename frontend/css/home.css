@@ -15,3 +15,27 @@
   --fuente-principal: 'Roboto', sans-serif;
   --fuente-encabezado: 'Orbitron', sans-serif;
 }
+
+
+/* Estilos del carrusel */
+
+#myCarousel {
+  max-width: 100%;   /* ancho máximo */
+  max-height: 400px;  /* alto máximo */
+  margin: auto;       /* centrar */
+
+}
+.carousel-item {
+  height: 400px;      /* define la altura de cada slide */
+}
+
+
+/* Estilos card body */
+
+.imgCard{
+  height: 590px;
+}
+
+.card-body{
+  height: 200px;
+}
