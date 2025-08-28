@@ -1,3 +1,5 @@
+//Lógica para el dropdown de regiones y comunas
+
 document.addEventListener("DOMContentLoaded", () => {
     const regionSelect = document.getElementById("region");
     const comunaSelect = document.getElementById("comuna");
