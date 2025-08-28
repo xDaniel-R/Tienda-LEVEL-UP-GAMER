@@ -41,3 +41,52 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+//Lógica para guardar los datos de usuario en el local storage
+
+//Acá el código guarda los datos en constantes
+const rutText = document.getElementById("rut");
+const usernameText = document.getElementById("username");
+const lastnameText = document.getElementById("userlastname");
+const emailText = document.getElementById("email");
+const passwordText = document.getElementById("password");
+const phoneText = document.getElementById("phone");
+const addressText = document.getElementById("address");
+const regionSelect = document.getElementById("region");
+const comunaSelect = document.getElementById("comuna");
+
+
+//Se llama al botón de registrar
+const botonRegistrar = document.getElementById("boton-registrar");
+
+
+
+//Acá se crea el evento para que al hacer click en el botón, se guarden los datos en el local storage
+botonRegistrar.addEventListener("click",(e) => {
+    //Previene que se recargue la página
+    e.preventDefault();
+    //Se guardan los valores de los inputs en variables
+    const rut = rutText.value;
+    const nombre = usernameText.value;
+    const apellido = lastnameText.value;
+    const correo = emailText.value;
+    const contrasena = passwordText.value;
+    const telefono = phoneText.value;
+    const direccion = addressText.value;
+    const region = regionSelect.value;
+    const comuna = comunaSelect.value;
+
+    //Almacenamos los datos en el local storage
+    localStorage.setItem("rut", rut);
+    localStorage.setItem("username", nombre);
+    localStorage.setItem("userlastname", apellido);
+    localStorage.setItem("email", correo);
+    localStorage.setItem("password", contrasena);
+    localStorage.setItem("phone", telefono);
+    localStorage.setItem("address", direccion);
+    localStorage.setItem("region", region);
+    localStorage.setItem("comuna", comuna);
+
+    //Console log es para ver los datos guardados en el navegador
+    console.log(localStorage)
+})
