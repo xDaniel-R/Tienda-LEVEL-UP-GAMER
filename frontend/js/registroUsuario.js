@@ -89,4 +89,7 @@ botonRegistrar.addEventListener("click",(e) => {
 
     //Console log es para ver los datos guardados en el navegador
     console.log(localStorage)
+
+    alert("Registro exitoso!. Ahora serás redirigido a la página de inicio de sesión.");
+    window.location.href = "login.html";
 })
