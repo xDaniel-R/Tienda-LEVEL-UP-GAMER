@@ -1,0 +1,141 @@
+/* Importar las fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500&display=swap');
+
+/* Fondo general */
+body {
+  background-color: #000000; /* Negro */
+  font-family: 'Roboto', sans-serif;
+  color: #FFFFFF; /* Texto principal en blanco */
+}
+
+/* Encabezados (títulos) */
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+/* Caja del formulario */
+.form-signin {
+  background-color: rgba(255, 255, 255, 0.05); /* Transparencia elegante */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(30, 144, 255, 0.5); /* Sombra azul eléctrico */
+}
+
+/* Campos de entrada */
+.form-control {
+  background-color: #111111; 
+  border: 1px solid #1E90FF; /* Azul eléctrico */
+  color: #FFFFFF;
+}
+
+.form-control:focus {
+  border-color: #39FF14; /* Verde neón al enfocar */
+  box-shadow: 0 0 8px #39FF14;
+  background-color: #1a1a1a;
+  color: #FFFFFF;
+}
+
+/* Etiquetas dentro de los inputs */
+.form-floating label {
+  color: #D3D3D3; /* Texto secundario */
+}
+
+/* Checkbox */
+.form-check-label {
+  color: #D3D3D3;
+}
+
+/* Botón principal */
+.btn-primary {
+  background-color: #1E90FF; /* Azul eléctrico */
+  border: none;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #39FF14; /* Verde neón */
+  color: #000000; /* Para contraste */
+  transform: scale(1.05);
+}
+
+/* Pie de página */
+.text-body-secondary {
+  color: #D3D3D3 !important;
+  text-align: center;
+}
+
+
+/*  Pantallas muy pequeñas (hasta 435px) */
+@media (max-width: 435px) {
+  .form-signin {
+    max-width: 90%;      /* Más estrecho */
+    padding: 1rem;       /* Menos relleno */
+    margin: 0 auto;      /* Centrado */
+  }
+
+  h1 {
+    font-size: 1.1rem;   /* Más chico el título */
+  }
+
+  .btn-primary {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+
+  .form-control {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+}
+
+
+/* Pantallas pequeñas (móviles, hasta 576px) */
+@media (max-width: 576px) {
+  .form-signin {
+    max-width: 95%; 
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .btn-primary {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}
+
+/*  Pantallas medianas (tablets, de 577px a 991px) */
+@media (min-width: 577px) and (max-width: 991px) {
+  .form-signin {
+    max-width: 70%; 
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .btn-primary {
+    font-size: 1rem;
+  }
+}
+
+/*Pantallas grandes (navegador / escritorio, desde 992px en adelante) */
+@media (min-width: 992px) {
+  .form-signin {
+    max-width: 330px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn-primary {
+    font-size: 1.1rem;
+  }
+}
