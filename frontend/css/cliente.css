@@ -1,0 +1,22 @@
+/* Importar las fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500&display=swap');
+
+/* Fondo general */
+body {
+  background-color: #000000; /* Negro */
+  font-family: 'Roboto', sans-serif;
+  color: #FFFFFF; /* Texto principal en blanco */
+}
+
+/* Encabezados (títulos) */
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.nav-link:hover{
+    background-color: #1E90FF; /* Azul eléctrico */
+    color: #000000; /* Para contraste */
+    transform: scale(1.05);
+}
