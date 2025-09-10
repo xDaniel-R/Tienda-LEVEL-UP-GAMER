@@ -3,39 +3,115 @@
 
 :root {
   /* Colores principales */
-  --color-fondo-principal: #000000;
-  --color-acento-azul: #1E90FF;
-  --color-acento-verde: #39FF14;
+  --color-fondo-principal: #000000; /* Negro */
+  --color-acento-azul: #1E90FF;     /* Azul eléctrico */
+  --color-acento-verde: #39FF14;    /* Verde neón */
 
   /* Colores de texto */
-  --color-texto-principal: #FFFFFF;
-  --color-texto-secundario: #D3D3D3;
+  --color-texto-principal: #FFFFFF;   /* Blanco */
+  --color-texto-secundario: #D3D3D3; /* Gris claro */
 
   /* Tipografía */
   --fuente-principal: 'Roboto', sans-serif;
   --fuente-encabezado: 'Orbitron', sans-serif;
 }
 
+/* Fondo general */
+body {
+  background-color: var(--color-fondo-principal);
+  font-family: var(--fuente-principal);
+  color: var(--color-texto-principal);
+}
+
+/* Encabezados */
+h1, h2, h3 {
+  font-family: var(--fuente-encabezado);
+  color: var(--color-texto-principal);
+  text-align: center;
+}
 
 /* Estilos del carrusel */
-
 #myCarousel {
-  max-width: 100%;   /* ancho máximo */
-  max-height: 400px;  /* alto máximo */
-  margin: auto;       /* centrar */
-
+  max-width: 100%;
+  max-height: 400px;
+  margin: auto;
 }
+
+.album {
+  background-color: var(--color-fondo-principal);
+}
+
 .carousel-item {
-  height: 400px;      /* define la altura de cada slide */
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.05); /* Transparencia elegante */
+  box-shadow: 0 0 20px rgba(30, 144, 255, 0.5); /* Sombra azul eléctrico */
+  border-radius: 15px;
 }
 
+col{
+  border-radius: 0px;
+}
 
-/* Estilos card body */
-
-.imgCard{
+/* Estilos de las cards */
+.imgCard {
   height: 590px;
+  border-radius: 10px;
 }
 
-.card-body{
-  height: 200px;
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.05); /* estilo similar al form-signin */
+  border-radius: 0px;
+  box-shadow: 0 0 15px rgba(30, 144, 255, 0.4);
+  transition: all 0.3s ease-in-out;
 }
+
+.card:hover {
+  box-shadow: 0 0 20px var(--color-acento-verde);
+  border: 1px solid var(--color-acento-verde);
+}
+
+.card-body {
+  height: 200px;
+  color: var(--color-texto-principal);
+  border: 1px solid var(--color-acento-azul);
+  /* border-radius: 10px; */
+  transition: all 0.3s ease-in-out;
+}
+
+.card-body:hover {
+  border-color: var(--color-acento-verde);
+  box-shadow: 0 0 10px var(--color-acento-verde);
+}
+
+footer{
+  padding: 0px 10px;
+}
+
+.footer-custom {
+  background-color: var(--color-fondo-principal); /* Negro */
+  border-top: 1px solid var(--color-acento-azul); /* Azul eléctrico */
+  color: var(--color-texto-secundario);
+}
+
+.footer-custom a {
+  color: var(--color-texto-secundario);
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-custom a:hover {
+  color: var(--color-acento-verde);
+  text-shadow: 0 0 5px var(--color-acento-verde);
+}
+
+.footer-custom .bi-bootstrap {
+  color: var(--color-acento-azul);
+}
+
+.footer-custom .bi-bootstrap:hover {
+  color: var(--color-acento-verde);
+  transform: scale(1.1);
+}
+
