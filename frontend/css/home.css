@@ -27,7 +27,7 @@ body {
 h1, h2, h3 {
   font-family: var(--fuente-encabezado);
   color: var(--color-texto-principal);
-  text-align: center;
+  text-align: left;
 }
 
 /* Estilos del carrusel */
