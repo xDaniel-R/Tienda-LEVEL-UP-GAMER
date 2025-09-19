@@ -56,12 +56,6 @@ aside h2 { font-size: 16px; margin: 0 0 8px; } /* Título “Filtros” pequeño
   color: var(--muted);                /* Texto de opciones en gris claro */
 }
 
-/* ===== Selects y inputs de texto (si los hubiera) ===== */
-.grupo select:focus {
-  border-color: var(--green);         /* Borde pasa a verde neón al enfocar */
-  box-shadow: 0 0 8px var(--green);   /* Halo verde alrededor */
-  outline: none;                      /* Quita el contorno azul del navegador */
-}
 
 /* ===== Checkboxes ===== */
 .grupo input[type="checkbox"] {
@@ -91,7 +85,6 @@ aside h2 { font-size: 16px; margin: 0 0 8px; } /* Título “Filtros” pequeño
   gap: 16px;                                          /* Separación entre tarjetas (horizontal/vertical) */
 }
 
-
 /* ===== Tarjeta de producto ===== */
 .card { 
   border: 1px solid var(--blue);                      /* Borde azul que hace match con el tema */
@@ -104,19 +97,7 @@ aside h2 { font-size: 16px; margin: 0 0 8px; } /* Título “Filtros” pequeño
 }
 .card:hover { 
   transform: translateY(-1px);                        /* Se eleva apenas al pasar el mouse */
-  box-shadow: 0 0 24px rgba(30,144,255,0.35);         /* Sombra un poco más intensa en hover */
-}
-
-/* CAMBIO: cuando el producto está agregado al carrito, ilumina en verde (igual al focus del login) */
-.card.added{
-  border-color: var(--green);
-  box-shadow: 0 0 12px var(--green);
-}
-
-/* (Opcional) highlight instantáneo al enfocar el botón en navegadores con :has() */
-.card:has(.btn-cart:focus){
-  border-color: var(--green);
-  box-shadow: 0 0 10px var(--green);
+  box-shadow: 0 0 24px rgba(30, 143, 255, 0.516);         /* Sombra un poco más intensa en hover */
 }
 
 .contenido { padding: 12px; }
@@ -133,32 +114,26 @@ aside h2 { font-size: 16px; margin: 0 0 8px; } /* Título “Filtros” pequeño
 }
 
 /* ===== Botones ===== */
-.btn { 
+.btin { 
   display: inline-block; 
   font-size: 14px; 
   padding: 8px 10px; 
   border: 0; 
   border-radius: 8px; 
-  background: #111; 
-  color: #fff; 
   cursor: pointer; 
   transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
   box-shadow: 0 0 20px rgba(49, 255, 30, 0.16);
 }
-.btn:active { transform: scale(0.98); }
+.btin:active { transform: scale(0.98); }
 
 /* CAMBIO: botón específico para carrito, igual que .btn-primary del login */
-.btn-cart{
-  background-color: var(--blue);
+.btin{
+  background-color: var(--text);
   font-weight: 700;
 }
-.btn-cart:hover{
+.btin:hover{
   background-color: var(--green);
   color: #000000;
-}
-.btn-cart:focus{
-  outline: none;
-  box-shadow: 0 0 8px var(--green);
 }
 
 /* ===== Miniatura ===== */
