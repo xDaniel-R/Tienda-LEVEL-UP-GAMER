@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo de Productos</title>
+  <link rel="stylesheet" href="../css/catalogo.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- Filtros por categoría (estático, sin JS) -->
+    <aside id="filtros">
+      <h2>Filtros</h2>
+      <div class="grupo">
+        <strong>Categoria</strong>
+        <label><input type="checkbox" name="cat" value="juegos de mesa"> Juegos de Mesa </label>
+        <label><input type="checkbox" name="cat" value="accesorios"> Accesorios </label>
+        <label><input type="checkbox" name="cat" value="consola"> Consolas y Juegos </label>
+        <label><input type="checkbox" name="cat" value="pc"> Computadores Gamers</label>
+        <label><input type="checkbox" name="cat" value="silla"> Sillas Gamers</label>
+        <label><input type="checkbox" name="cat" value="mouse"> Mouse </label>
+        <label><input type="checkbox" name="cat" value="mousepad"> Mousepad </label>
+        <label><input type="checkbox" name="cat" value="poleras"> Poleras Personalizadas </label>
+      </div>
+      <div class="grupo">
+        <strong>Precio</strong>
+        <label><input type="checkbox" name="price" value="lt100"> > $100.000 </label>
+        <label><input type="checkbox" name="price" value="100-300"> $100.000 – $300.000</label>
+        <label><input type="checkbox" name="price" value="gt300"> < $300.000 </label>
+      </div>
+    </aside>
+
+    <!-- Catálogo 3 columnas x 5 filas (15 productos) -->
+    <main>
+      <h1 style="font-size:18px;margin:0 0 12px;">Catálogo</h1>
+      <section class="grid">
+
+        <!-- Repite esta tarjeta para cada producto (aquí van 15) -->
+        <article class="card" data-categoria="silla">
+          <img src="../img/Producto2.png" alt="Producto 2">
+          <div class="contenido">
+            <h3 class="titulo">Silla Secretlab Titan</h3>
+            <div class="precio">$349.990 CLP</div>
+            <button class="btn">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="consola">
+          <img src="../img/Producto1.png" alt="PlayStation 5">
+          <div class="contenido">
+            <h3 class="titulo">PlayStation 5</h3>
+            <div class="precio">$549.990 CLP</div>
+            <button class="btn">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="pc">
+          <img src="../img/Producto3.png" alt="PC Gamer ASUS ROG Strix">
+          <div class="contenido">
+            <h3 class="titulo">PC Gamer ASUS ROG Strix</h3>
+            <div class="precio">$1.299.990 CLP</div>
+            <button class="btn">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="juegos de mesa">
+          <img src="../img/Producto4.png" alt="Catan">
+          <div class="contenido">
+            <h3 class="titulo">Catan</h3>
+            <div class="precio">$29.990  CLP</div>
+            <button class="btn">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="juegos de mesa">
+          <img src="../img/Producto5.png" alt=" Carcassonne">
+          <div class="contenido">
+            <h3 class="titulo"> Carcassonne</h3>
+            <div class="precio">$24.990 CLP</div>
+            <button class="btn">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="mouse">
+          <img src="../img/Producto7.png" alt="Mouse Logitech G502 HERO">
+          <div class="contenido">
+            <h3 class="titulo">Mouse Logitech G502 HERO</h3>
+            <div class="precio">$49.990  CLP</div>
+            <button class="btn">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="accesorios">
+          <img src="../img/Producto8.png" alt="Auriculares HyperX Cloud II">
+          <div class="contenido">
+            <h3 class="titulo">Auriculares HyperX Cloud II</h3>
+            <div class="precio">$79.990  CLP</div>
+            <button class="btn">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="mousepad">
+          <img src="../img/Producto10.png" alt="Mousepad Razer Goliathus">
+          <div class="contenido">
+            <h3 class="titulo">Mousepad Razer Goliathus</h3>
+            <div class="precio">$29.990 CLP</div>
+            <button class="btn">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="poleras">
+          <img src="../img/Producto11.png" alt="Polera Personalizada 'Level-Up' ">
+          <div class="contenido">
+            <h3 class="titulo">Polera Personalizada 'Level-Up' </h3>
+            <div class="precio">$14.990 CLP</div>
+            <button class="btn">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="accesorios">
+          <img src="../img/Producto12.png" alt="Producto 12">
+          <div class="contenido">
+            <h3 class="titulo"> Controlador Inalámbrico Xbox Series X</h3>
+            <div class="precio">$59.990 CLP</div>
+            <button class="btn">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="consola">
+          <img src="../img/Producto13.png" alt="Producto 13">
+          <div class="contenido">
+            <h3 class="titulo">PS5 Death Stranding 2</h3>
+            <div class="precio">$69.990 CLP</div>
+            <button class="btn">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <article class="card" data-categoria="consola">
+          <img src="../img/Producto14.png" alt="Producto 14">
+          <div class="contenido">
+            <h3 class="titulo">Xbox Consola Serie S</h3>
+            <div class="precio">$269.990 CLP</div>
+            <button class="btn">Agregar al carrito</button>
+          </div>
+        </article>
+
+       <!-- <article class="card">
+          <div class="img">Imagen 13</div>
+          <div class="contenido">
+            <h3 class="titulo">Producto 13</h3>
+            <div class="precio">$99.990 CLP</div>
+            <button class="btn">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img">Imagen 14</div>
+          <div class="contenido">
+            <h3 class="titulo">Producto 14</h3>
+            <div class="precio">$149.990 CLP</div>
+            <button class="btn">Agregar al carrito</button>
+          </div>
+        </article>
+
+        /*<article class="card">
+          <div class="img">Imagen 15</div>
+          <div class="contenido">
+            <h3 class="titulo">Producto 15</h3>
+            <div class="precio">$79.990 CLP</div>
+            <button class="btn">Agregar al carrito</button>
+          </div>
+        </article>-->
+      </section>
+    </main>
+  </div>
+</body>
+<script src="../js/catalogo.js"></script>
+</html>
