@@ -1,6 +1,7 @@
 /* ===== Tipografías (igual al login) ===== */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500&display=swap');
 
+
 /* ===== Variables de color para mantener coherencia con el login ===== */
 :root{
   --bg: #000000;
@@ -56,6 +57,12 @@ aside h2 { font-size: 16px; margin: 0 0 8px; } /* Título “Filtros” pequeño
   color: var(--muted);                /* Texto de opciones en gris claro */
 }
 
+/* ===== Selects y inputs de texto (si los hubiera) ===== */
+.grupo select:focus {
+  border-color: var(--green);         /* Borde pasa a verde neón al enfocar */
+  box-shadow: 0 0 8px var(--green);   /* Halo verde alrededor */
+  outline: none;                      /* Quita el contorno azul del navegador */
+}
 
 /* ===== Checkboxes ===== */
 .grupo input[type="checkbox"] {
@@ -85,6 +92,7 @@ aside h2 { font-size: 16px; margin: 0 0 8px; } /* Título “Filtros” pequeño
   gap: 16px;                                          /* Separación entre tarjetas (horizontal/vertical) */
 }
 
+
 /* ===== Tarjeta de producto ===== */
 .card { 
   border: 1px solid var(--blue);                      /* Borde azul que hace match con el tema */
@@ -97,8 +105,15 @@ aside h2 { font-size: 16px; margin: 0 0 8px; } /* Título “Filtros” pequeño
 }
 .card:hover { 
   transform: translateY(-1px);                        /* Se eleva apenas al pasar el mouse */
-  box-shadow: 0 0 24px rgba(30, 143, 255, 0.619);         /* Sombra un poco más intensa en hover */
+  box-shadow: 0 0 24px rgba(30,144,255,0.35);         /* Sombra un poco más intensa en hover */
 }
+
+/* cuando el producto está agregado al carrito, ilumina en verde (igual al focus del login) */
+.card.added{
+  border-color: var(--green);
+  box-shadow: 0 0 12px var(--green);
+}
+
 
 .contenido { padding: 12px; }
 .titulo { 
@@ -114,27 +129,33 @@ aside h2 { font-size: 16px; margin: 0 0 8px; } /* Título “Filtros” pequeño
 }
 
 /* ===== Botones ===== */
-.btin { 
+.btn { 
   display: inline-block; 
   font-size: 14px; 
   padding: 8px 10px; 
   border: 0; 
   border-radius: 8px; 
+  background: #111; 
+  color: #fff; 
   cursor: pointer; 
   transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
-  box-shadow: 0 0 20px rgba(49, 255, 30, 0.16);
+  box-shadow: 0 0 20px rgba(49, 255, 30, 0.249);
 }
-.btin:active { transform: scale(0.98); }
+.btn:active { transform: scale(0.98); }
 
-/*  botón específico para carrito, igual que .btn-primary del login */
-.btin{
-  background-color: var(--text);
+/* CAMBIO: botón específico para carrito, igual que .btn-primary del login 
+.btn-cart{
+  background-color: var(--blue);
   font-weight: 700;
 }
-.btin:hover{
+.btn-cart:hover{
   background-color: var(--green);
   color: #000000;
 }
+.btn-cart:focus{
+  outline: none;
+  box-shadow: 0 0 8px var(--green);
+}*/
 
 /* ===== Miniatura ===== */
 .card .img {
@@ -151,6 +172,8 @@ aside h2 { font-size: 16px; margin: 0 0 8px; } /* Título “Filtros” pequeño
   display: block;
 }
 
+
+
 /* ===== Responsivo ===== */
 /* CAMBIO: mejor respuesta en móviles */
 @media (max-width: 992px){
@@ -162,3 +185,4 @@ aside h2 { font-size: 16px; margin: 0 0 8px; } /* Título “Filtros” pequeño
   .grid{ grid-template-columns: 1fr; }
 }
 
+/* ===== css de barra superior ===== */
