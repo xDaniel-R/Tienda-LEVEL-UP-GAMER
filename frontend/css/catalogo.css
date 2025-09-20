@@ -97,7 +97,7 @@ aside h2 { font-size: 16px; margin: 0 0 8px; } /* Título “Filtros” pequeño
 }
 .card:hover { 
   transform: translateY(-1px);                        /* Se eleva apenas al pasar el mouse */
-  box-shadow: 0 0 24px rgba(30, 143, 255, 0.516);         /* Sombra un poco más intensa en hover */
+  box-shadow: 0 0 24px rgba(30, 143, 255, 0.619);         /* Sombra un poco más intensa en hover */
 }
 
 .contenido { padding: 12px; }
