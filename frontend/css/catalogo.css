@@ -126,7 +126,7 @@ aside h2 { font-size: 16px; margin: 0 0 8px; } /* Título “Filtros” pequeño
 }
 .btin:active { transform: scale(0.98); }
 
-/* CAMBIO: botón específico para carrito, igual que .btn-primary del login */
+/*  botón específico para carrito, igual que .btn-primary del login */
 .btin{
   background-color: var(--text);
   font-weight: 700;
@@ -161,3 +161,4 @@ aside h2 { font-size: 16px; margin: 0 0 8px; } /* Título “Filtros” pequeño
   aside{ order: -1; } /* filtros arriba */
   .grid{ grid-template-columns: 1fr; }
 }
+

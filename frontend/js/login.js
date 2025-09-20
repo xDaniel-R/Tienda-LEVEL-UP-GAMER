@@ -43,10 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //  Simulación de login exitoso
-    if (email === "test@correo.com" && password === "1234") {
+    if (email === email && password === password) {
       alert("Inicio de sesión exitoso");
-      // Ejemplo: redirigir
-      // window.location.href = "dashboard.html";
+      alert("Serás redirigido a la página principal.");
+      window.location.href = "cliente.html"; // Redirigir a la página principal
     } else {
       alert("Usuario o contraseña incorrectos.");
     }

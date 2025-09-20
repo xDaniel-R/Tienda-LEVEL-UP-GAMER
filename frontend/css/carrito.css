@@ -1,0 +1,41 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* Contenedor general */
+.carrito-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    background: #222;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 24px;
+}
+
+/* Título */
+.carrito-titulo {
+    font-size: 1rem;
+    margin-bottom: 16px;
+    text-align: left;
+    color: #fff;
+}
+
+/* Producto */
+.carrito-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #444;
+    padding: 0.1cm 24px;
+}
+
+/* Imagen */
+.carrito-img {
+    width: 3cm;
+    height: 3cm;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-right: 16px;
+    background: #fff;
+    padding: 4px;
+}

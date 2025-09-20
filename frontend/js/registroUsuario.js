@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const comunasPorRegion = {
         aisen: ["Aisén", "Chile Chico", "Cisnes", "Cochrane", "Coyhaique", "Guaitecas", "Lago Verde", "O’Higgins", "Rio Ibañez", "Tortel"],
-        antofagasta: ["Antofagasta", "Calama", "María Elena", "Mejillones", "Ollagüe", "San Pedro de Atacama", "Sierra Gorda", "Taltal",  "Tocopilla"],
+        antofagasta: ["Antofagasta", "Calama", "María Elena", "Mejillones", "Ollagüe", "San Pedro de Atacama", "Sierra Gorda", "Taltal", "Tocopilla"],
         araucania: ["Angol", "Carahue", "Cholchol", "Collipulli", "Cunco", "Curarrehue", "Ercilla", "Freire", "Galvarino", "Gorbea", "Lautaro", "Lonquimay", "Los Sauces", "Lumaco", "Melipeuco", "Nueva Imperial", "Padre las Casas", "Perquenco", "Pitrufquén",
-                    "Pucón", "Purén", "Renaico", "Saavedra", "Temuco", "Teodoro Schmidt", "Toltén", "Traiguén", "Victoria", "Vilcún", "Villarrica"],
+            "Pucón", "Purén", "Renaico", "Saavedra", "Temuco", "Teodoro Schmidt", "Toltén", "Traiguén", "Victoria", "Vilcún", "Villarrica"],
         arica: ["Arica", "Camarones", "Putre", "General Lagos"],
         atacama: ["Copiapó", "Caldera", "Tierra Amarilla", "Chañaral", "Diego de Almagro", "Vallenar", "Alto del Carmen", "Freirina", "Huasco"],
         biobio: ["Concepción", "Talcahuano", "Hualpén", "San Pedro de la Paz", "Chiguayante", "Coronel", "Lota", "Tomé", "Penco", "Florida", "Santa Juana", "Los Ángeles", "Nacimiento", "Laja", "Mulchén", "Negrete", "Yumbel", "Cabrero", "Quilaco", "Quilleco"],
@@ -19,13 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
         magallanes: ["Punta Arenas", "Puerto Natales", "Porvenir", "Primavera", "Timaukel", "Cabo de Hornos", "Antártica"],
         maule: ["Talca", "Constitución", "San Clemente", "Maule", "Curepto", "Pelarco", "Linares", "Yerbas Buenas", "Colbún", "San Javier", "Villa Alegre", "Longaví", "Retiro", "Parral", "Cauquenes", "Chanco", "Pelluhue"],
         nuble: ["Chillán", "Chillán Viejo", "Bulnes", "Quillón", "San Ignacio", "El Carmen", "Yungay", "Pemuco", "Coihueco", "San Carlos", "Ñiquén", "San Fabián", "San Nicolás", "Pinto", "Ránquil", "Quirihue", "Cobquecura", "Trehuaco"],
-        metropolitana: ["Alhué", "Buin", "Calera de Tango", "Cerrillos", "Cerro Navia", "Colina", "Conchalí", "Curacaví", "El Bosque", "El Monte", "Estación Central", "Huechuraba", "Independencia", "Isla de Maipo", 
+        metropolitana: ["Alhué", "Buin", "Calera de Tango", "Cerrillos", "Cerro Navia", "Colina", "Conchalí", "Curacaví", "El Bosque", "El Monte", "Estación Central", "Huechuraba", "Independencia", "Isla de Maipo",
             "La Cisterna", "La Florida", "La Granja", "La Pintana", "La Reina", "Lampa", "Las Condes", "Lo Barnechea", "Lo Espejo", "Lo Prado", "Macul", "Maipú", "María Pinto", "Melipilla", "Ñuñoa", "Padre Hurtado", "Paine",
             "Pedro Aguirre Cerda", "Peñaflor", "Peñalolén", "Pirque", "Providencia", "Pudahuel", "Puente Alto", "Quilicura", "Quinta Normal", "Recoleta", "Renca", "San Bernardo", "San Joaquín", "San José de Maipo", "San Miguel", "San Pedro",
             "San Ramón", "Santiago Centro", "Talagante", "Tiltil", "Vitacura"],
         tarapaca: ["Iquique", "Alto Hospicio", "Pozo Almonte", "Pica", "Huara", "Camiña", "Colchane"],
         valparaiso: ["Valparaíso", "Viña del Mar", "Concón", "Quintero", "Puchuncaví", "Casablanca", "Quilpué", "Villa Alemana", "Limache", "Olmué", "San Antonio", "Cartagena", "El Quisco", "El Tabo", "Algarrobo", "Isla de Pascua"]
-        };
+    };
 
     regionSelect.addEventListener("change", function () {
         const region = this.value;
@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-//Lógica para guardar los datos de usuario en el local storage
 
 //Acá el código guarda los datos en constantes
 const rutText = document.getElementById("rut");
@@ -60,9 +59,8 @@ const comunaSelect = document.getElementById("comuna");
 const botonRegistrar = document.getElementById("boton-registrar");
 
 
-
 //Acá se crea el evento para que al hacer click en el botón, se guarden los datos en el local storage
-botonRegistrar.addEventListener("click",(e) => {
+botonRegistrar.addEventListener("click", (e) => {
     //Previene que se recargue la página
     e.preventDefault();
     //Se guardan los valores de los inputs en variables
@@ -76,17 +74,24 @@ botonRegistrar.addEventListener("click",(e) => {
     const region = regionSelect.value;
     const comuna = comunaSelect.value;
 
-    //Almacenamos los datos en el local storage
-    localStorage.setItem("rut", rut);
-    localStorage.setItem("username", nombre);
-    localStorage.setItem("userlastname", apellido);
-    localStorage.setItem("email", correo);
-    localStorage.setItem("password", contrasena);
-    localStorage.setItem("phone", telefono);
-    localStorage.setItem("address", direccion);
-    localStorage.setItem("region", region);
-    localStorage.setItem("comuna", comuna);
+    //Lógica para guardar los datos de usuario en el local storage
+    if (rut === "" || username === "" || email === "" || Contraseña === "" || telefono === "" || region === "" || comuna === "" || direccion === "") {
+        return alert("Por favor, complete todos los campos del formulario."); // Evita que el formulario se envíe
+    } else {
+        //Almacenamos los datos en el local storage
+        localStorage.setItem("rut", rut);
+        localStorage.setItem("username", nombre);
+        localStorage.setItem("userlastname", apellido);
+        localStorage.setItem("email", correo);
+        localStorage.setItem("password", contrasena);
+        localStorage.setItem("phone", telefono);
+        localStorage.setItem("address", direccion);
+        localStorage.setItem("region", region);
+        localStorage.setItem("comuna", comuna);
+        //Console log es para ver los datos guardados en el navegador
+        console.log(localStorage)
+        alert("Registro exitoso!. Ahora serás redirigido a la página de inicio de sesión.");
+        window.location.href = "login.html";
+    }
 
-    //Console log es para ver los datos guardados en el navegador
-    console.log(localStorage)
 })
