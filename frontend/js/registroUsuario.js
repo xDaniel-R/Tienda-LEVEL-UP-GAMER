@@ -42,8 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
-//Acá el código guarda los datos en constantes
+// ==========================
+// Captura de elementos
+// ==========================
 const rutText = document.getElementById("rut");
 const usernameText = document.getElementById("username");
 const lastnameText = document.getElementById("userlastname");
@@ -53,45 +54,113 @@ const phoneText = document.getElementById("phone");
 const addressText = document.getElementById("address");
 const regionSelect = document.getElementById("region");
 const comunaSelect = document.getElementById("comuna");
-
-
-//Se llama al botón de registrar
 const botonRegistrar = document.getElementById("boton-registrar");
 
+// ==========================
+// Autoformateo de RUT
+// ==========================
+rutText.addEventListener("input", function (e) {
+    let valor = e.target.value;
 
-//Acá se crea el evento para que al hacer click en el botón, se guarden los datos en el local storage
+    // Eliminar puntos y guiones para limpiar
+    valor = valor.replace(/[^\dkK]/g, ""); 
+    valor = valor.replace(/^0+/, ""); 
+
+    if (valor.length > 1) {
+        let cuerpo = valor.slice(0, -1);
+        let dv = valor.slice(-1);
+        cuerpo = cuerpo.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        e.target.value = `${cuerpo}-${dv}`;
+    } else {
+        e.target.value = valor;
+    }
+});
+
+// ==========================
+// Función para validar RUT chileno
+// ==========================
+function validarRut(rutCompleto) {
+    rutCompleto = rutCompleto.replace(/\./g, "").replace(/-/g, "");
+    if (rutCompleto.length < 8) return false;
+
+    let cuerpo = rutCompleto.slice(0, -1);
+    let dv = rutCompleto.slice(-1).toUpperCase();
+
+    let suma = 0;
+    let multiplo = 2;
+
+    for (let i = cuerpo.length - 1; i >= 0; i--) {
+        suma += multiplo * cuerpo.charAt(i);
+        multiplo = multiplo < 7 ? multiplo + 1 : 2;
+    }
+
+    let dvEsperado = 11 - (suma % 11);
+    dvEsperado = dvEsperado === 11 ? "0" : dvEsperado === 10 ? "K" : dvEsperado.toString();
+
+    return dv === dvEsperado;
+}
+
+// ==========================
+// Evento de registro
+// ==========================
 botonRegistrar.addEventListener("click", (e) => {
-    //Previene que se recargue la página
     e.preventDefault();
-    //Se guardan los valores de los inputs en variables
-    const rut = rutText.value;
-    const nombre = usernameText.value;
-    const apellido = lastnameText.value;
-    const correo = emailText.value;
-    const contrasena = passwordText.value;
-    const telefono = phoneText.value;
-    const direccion = addressText.value;
+
+    const rut = rutText.value.trim();
+    const nombre = usernameText.value.trim();
+    const apellido = lastnameText.value.trim();
+    const correo = emailText.value.trim();
+    const contrasena = passwordText.value.trim();
+    const telefono = phoneText.value.trim();
+    const direccion = addressText.value.trim();
     const region = regionSelect.value;
     const comuna = comunaSelect.value;
 
-    //Lógica para guardar los datos de usuario en el local storage
-    if (rut === "" || username === "" || email === "" || Contraseña === "" || telefono === "" || region === "" || comuna === "" || direccion === "") {
-        return alert("Por favor, complete todos los campos del formulario."); // Evita que el formulario se envíe
-    } else {
-        //Almacenamos los datos en el local storage
-        localStorage.setItem("rut", rut);
-        localStorage.setItem("username", nombre);
-        localStorage.setItem("userlastname", apellido);
-        localStorage.setItem("email", correo);
-        localStorage.setItem("password", contrasena);
-        localStorage.setItem("phone", telefono);
-        localStorage.setItem("address", direccion);
-        localStorage.setItem("region", region);
-        localStorage.setItem("comuna", comuna);
-        //Console log es para ver los datos guardados en el navegador
-        console.log(localStorage)
-        alert("Registro exitoso!. Ahora serás redirigido a la página de inicio de sesión.");
-        window.location.href = "login.html";
+    // Validación de campos vacíos
+    if (!rut || !nombre || !apellido || !correo || !contrasena || !telefono || !direccion || !region || !comuna) {
+        return alert("Por favor, complete todos los campos del formulario.");
     }
 
-})
+    // Validación de RUT
+    if (!validarRut(rut)) {
+        return alert("El RUT ingresado no es válido.");
+    }
+
+    // Validación de correo
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(correo)) {
+        return alert("Por favor, ingrese un correo electrónico válido.");
+    }
+
+    // Validación de teléfono (solo números y al menos 8 dígitos)
+    const phonePattern = /^[0-9]{8,12}$/;
+    if (!phonePattern.test(telefono)) {
+        return alert("El número de teléfono debe tener entre 8 y 12 dígitos numéricos.");
+    }
+
+    // Validación de contraseña (mínimo 8 caracteres, al menos 1 mayúscula y 1 número)
+    const passwordPattern = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+    if (!passwordPattern.test(contrasena)) {
+        return alert("La contraseña debe tener al menos 8 caracteres, una mayúscula y un número.");
+    }
+
+    // Validación región/comuna seleccionadas
+    if (region === "" || comuna === "") {
+        return alert("Debe seleccionar una región y una comuna.");
+    }
+
+    // Guardar en LocalStorage
+    localStorage.setItem("rut", rut);
+    localStorage.setItem("username", nombre);
+    localStorage.setItem("userlastname", apellido);
+    localStorage.setItem("email", correo);
+    localStorage.setItem("password", contrasena);
+    localStorage.setItem("phone", telefono);
+    localStorage.setItem("address", direccion);
+    localStorage.setItem("region", region);
+    localStorage.setItem("comuna", comuna);
+
+    console.log(localStorage);
+    alert("Registro exitoso! Ahora serás redirigido al inicio de sesión.");
+    window.location.href = "login.html";
+});
