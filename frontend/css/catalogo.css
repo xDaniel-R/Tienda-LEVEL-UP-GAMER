@@ -1,0 +1,164 @@
+/* ===== Tipografías (igual al login) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500&display=swap');
+
+/* ===== Variables de color para mantener coherencia con el login ===== */
+:root{
+  --bg: #000000;
+  --text: #FFFFFF;
+  --muted: #D3D3D3;
+  --blue: #1E90FF;   /* Azul eléctrico del login */
+  --green: #39FF14;  /* Verde neón del login */
+  --card: rgba(255,255,255,0.05); /* “vidrio” oscuro del login */
+}
+
+* { box-sizing: border-box; } /* evita que padding/bordes inflen medidas */
+
+.card.is-hidden { display: none; }
+
+/* ===== Base ===== */
+body {
+  background-color: var(--bg);       /* Fondo general negro */
+  font-family: 'Roboto', sans-serif; /* Tipografía por defecto (texto) */
+  color: var(--text);                /* Texto en blanco */
+}
+
+h1, h2, h3 {                         
+  font-family: 'Orbitron', sans-serif; /* Títulos con estilo futurista */
+  color: var(--text);                  /* Títulos en blanco */
+}
+
+
+
+/* ===== Layout ===== */
+.wrap {
+  display: grid;                      /* Usamos grilla para distribuir aside + main */
+  grid-template-columns: 260px 1fr;   /* Columna fija de 260px (filtros) + columna flexible (productos) */
+  gap: 16px;                          /* Espacio entre las dos columnas */
+  padding: 16px;                      /* Relleno interior para que nada pegue a los bordes */
+}
+
+/* Bloque de filtros */
+aside { 
+  border: 1px solid var(--blue);           /*borde azul eléctrico */
+  border-radius: 12px;                     /*  radios consistentes */
+  padding: 12px;
+  align-self: start;                      /* se ajusta al contenido el borde*/
+  background: var(--card);                 /*  mismo “vidrio” del login */
+  box-shadow: 0 0 20px rgba(30,144,255,0.2); /* leve glow azul */
+}
+aside h2 { font-size: 16px; margin: 0 0 8px; } /* Título “Filtros” pequeño y con margen inferior */
+
+.grupo { margin-bottom: 12px; }       /*SEPARACIÓN VISIBLE ENTRE BLOQUES (ej. Categoría vs Precio) */
+.grupo label { 
+  display: block;                     /* Cada opción (checkbox+texto) en su propia línea */
+  margin: 6px 0;                      /* ESPACIO ENTRE OPCIONES: separa una casilla de la siguiente */
+  font-size: 14px;                    /* Tamaño de letra para opciones */
+  color: var(--muted);                /* Texto de opciones en gris claro */
+}
+
+
+/* ===== Checkboxes ===== */
+.grupo input[type="checkbox"] {
+  width: auto;                        /* Caja en su tamaño normal (no se estira) */
+  display: inline-block;              /* Permite que vaya junto al texto */
+  margin-right: 8px;                  /* Separación entre la cajita y el texto del label */
+  accent-color: var(--blue, #1E90FF); /* Color del check (relleno) por defecto: azul */
+  vertical-align: middle;             /* Alinea cajita con el texto en el eje vertical */
+}
+
+/* ✓ Marcado: verde y con brillo suave */
+.grupo input[type="checkbox"]:checked {
+  accent-color: var(--green, #39FF14);/* Check pasa a verde neón */
+  box-shadow: 0 0 6px var(--green, #39FF14); /* Halo verde suave alrededor */
+}
+
+/* ● Foco sin marcar: se mantiene azul, sin halo verde */
+.grupo input[type="checkbox"]:focus:not(:checked) {
+  accent-color: var(--blue, #1E90FF); /* Check azul (estado de foco) */
+  box-shadow: none;                   /* No aplicar resplandor cuando no está marcado */
+}
+
+/* ===== Grid de productos ===== */
+.grid {
+  display: grid;                                      /* Activa la grilla para las tarjetas */
+  grid-template-columns: repeat(3, 1fr);              /* 3 columnas del mismo ancho */
+  gap: 16px;                                          /* Separación entre tarjetas (horizontal/vertical) */
+}
+
+/* ===== Tarjeta de producto ===== */
+.card { 
+  border: 1px solid var(--blue);                      /* Borde azul que hace match con el tema */
+  border-radius: 15px;                                /* Esquinas redondeadas tipo tarjeta */
+  overflow: hidden;                                   /* Recorta cualquier contenido que sobresalga (img) */
+  background: var(--card);                            /* Fondo “vidrio” oscuro translúcido */
+  color: var(--text);                                 /* Texto en blanco dentro de la tarjeta */
+  box-shadow: 0 0 20px rgba(30,144,255,0.2);          /* Sombra azul sutil para dar profundidad */
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; /* Animación suave al interactuar */
+}
+.card:hover { 
+  transform: translateY(-1px);                        /* Se eleva apenas al pasar el mouse */
+  box-shadow: 0 0 24px rgba(30, 143, 255, 0.619);         /* Sombra un poco más intensa en hover */
+}
+
+.contenido { padding: 12px; }
+.titulo { 
+  font-family: 'Orbitron', sans-serif;  
+  font-size: 1rem; 
+  margin: 0 0 6px; 
+  line-height: 1.2; 
+}
+.precio { 
+  font-weight: 700; 
+  margin: 6px 0 10px; 
+  color: var(--blue);                      
+}
+
+/* ===== Botones ===== */
+.btin { 
+  display: inline-block; 
+  font-size: 14px; 
+  padding: 8px 10px; 
+  border: 0; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+  box-shadow: 0 0 20px rgba(49, 255, 30, 0.16);
+}
+.btin:active { transform: scale(0.98); }
+
+/*  botón específico para carrito, igual que .btn-primary del login */
+.btin{
+  background-color: var(--text);
+  font-weight: 700;
+}
+.btin:hover{
+  background-color: var(--green);
+  color: #000000;
+}
+
+/* ===== Miniatura ===== */
+.card .img {
+  height: 240px;
+  overflow: hidden;
+  display: block;
+  background: #111111;                  
+  border-radius: 6px;
+}
+.card img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== Responsivo ===== */
+/* CAMBIO: mejor respuesta en móviles */
+@media (max-width: 992px){
+  .grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px){
+  .wrap{ grid-template-columns: 1fr; }
+  aside{ order: -1; } /* filtros arriba */
+  .grid{ grid-template-columns: 1fr; }
+}
+
