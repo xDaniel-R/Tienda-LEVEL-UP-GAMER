@@ -14,61 +14,66 @@
 
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a href="../html/home.html">
-          <img width="40" height="40" src="../img/imagenlogo.png" alt="Logo" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+            <div class="container-fluid">
+                <a href="../html/home.html">
+                    <img width="40" height="40" src="../img/Logo.png" alt="Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0 flex-row gap-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../html/home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../html/catalogo.html">Catalogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../html/nosotros.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../html/blog.html">Blogs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Contacto</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li> -->
+                    </ul>
 
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0 flex-row gap-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../html/home.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="../html/productos.html">Productos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="../html/nosotros.html">Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="../html/blog.html">Blogs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Contacto</a>
-            </li>
-            <!-- <li class="nav-item"> 
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a> 
-            </li>  -->
-          </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" />
+                        <button class="btn btn-outline-success" type="submit">
+                            Buscar
+                        </button>
+                    </form>
+                    <!-- Botón Carrito -->
+                    <button class="btn btn-outline-light d-flex align-items-center ms-3" type="button"
+                        data-bs-toggle="offcanvas" data-bs-target="#carritoOffcanvas" aria-controls="carritoOffcanvas">
+                        <i class="bi bi-cart-fill me-2"></i> Carrito
+                    </button>
+                    <a href="../html/registroUsuario.html">
+                        <button class="btn btn-outline-light d-flex align-items-center ms-3" type="button"
+                            data-bs-toggle="offcanvas" data-bs-target="#inicioOffcanvas"
+                            aria-controls="inicioOffcanvas">
+                            Registrarse
+                        </button>
+                    </a>
 
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" />
-            <button class="btn btn-outline-success" type="submit">
-              Buscar
-            </button>
-          </form>
-          <!-- Botón registro de usuario -->
-          <a href="../html/registroUsuario.html">
-            <button class="btn btn-outline-light d-flex align-items-center ms-3" type="button"
-                data-bs-toggle="offcanvas" data-bs-target="#inicioOffcanvas" aria-controls="inicioOffcanvas">
-              Registrarse
-            </button>
-          </a>
+                    <a href="../html/login.html">
+                        <button class="btn btn-outline-light d-flex align-items-center ms-3" type="button"
+                            data-bs-toggle="offcanvas" data-bs-target="#inicioOffcanvas"
+                            aria-controls="inicioOffcanvas">
+                            Iniciar sesión
+                        </button>
+                    </a>
 
-          <a href="../html/login.html">
-            <button class="btn btn-outline-light d-flex align-items-center ms-3" type="button"
-                data-bs-toggle="offcanvas" data-bs-target="#inicioOffcanvas" aria-controls="inicioOffcanvas">
-              Iniciar sesión
-            </button>
-          </a>
-
-        </div>
-      </div>
-    </nav>
+                </div>
+            </div>
+        </nav>
     <!-- Carousel -->
     <div id="myCarousel" class="carousel slide mb-6 bg-dark" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -126,16 +131,16 @@
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           <div class="col">
-            <div class="card">
-              <img src="../img/Nintendo Switch 2.png" class="imgCard">
+            <div class="card shadow-sm">
+              <img src="../img/Producto15.png" class="imgCard">
               <div class="card-body">
                 <strong>Nintendo</strong>
                 <p class="card-text">
-                  Ninteno Switch 2 + Mario Kart
+                  Ninteno Switch 2 + Mario Kart Deluxe
                   <br>
                   World Pre-Cargado
                 </p>
-                <strong>$669.990</strong>
+                <strong>$669.990 CLP</strong>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group mx-auto">
                     <button type="button" class="btn btn-sm btn-outline-secondary">
@@ -147,17 +152,17 @@
             </div>
           </div>
           <div class="col">
-            <div class="card">
-              <img src="../img/Xbox series S.png" class="imgCard">
+
+            <div class="card shadow-sm">
+              <img src="../img/Producto14.png" class="imgCard">
               <div class="card-body">
                 <strong>Xbox</strong>
                 <p class="card-text">
                   Consola Serie S
                   <br>
                   Nueva
-                </p>
-
-                <strong>$269.990</strong>
+                </p>   
+                <strong>$269.990 CLP</strong>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group mx-auto">
                     <button type="button" class="btn btn-sm btn-outline-secondary">
@@ -170,15 +175,15 @@
           </div>
           <div class="col">
             <div class="card shadow-sm">
-              <img src="../img/PS5 Juego 1.png" class="imgCard">
+              <img src="../img/Producto13.png" class="imgCard">
               <div class="card-body">
                 <strong>Juego</strong>
                 <p class="card-text">
-                  Juego Death Stranding 2
+                  PS5 Death Stranding 2
                   <br>
                   On The Beach
                 </p>
-                <strong>$59.990</strong>
+                <strong>$69.990 CLP</strong>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group mx-auto">
                     <button type="button" class="btn btn-sm btn-outline-secondary">

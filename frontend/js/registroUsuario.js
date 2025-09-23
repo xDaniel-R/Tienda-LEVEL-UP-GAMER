@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const comunasPorRegion = {
         aisen: ["Aisén", "Chile Chico", "Cisnes", "Cochrane", "Coyhaique", "Guaitecas", "Lago Verde", "O’Higgins", "Rio Ibañez", "Tortel"],
-        antofagasta: ["Antofagasta", "Calama", "María Elena", "Mejillones", "Ollagüe", "San Pedro de Atacama", "Sierra Gorda", "Taltal",  "Tocopilla"],
+        antofagasta: ["Antofagasta", "Calama", "María Elena", "Mejillones", "Ollagüe", "San Pedro de Atacama", "Sierra Gorda", "Taltal", "Tocopilla"],
         araucania: ["Angol", "Carahue", "Cholchol", "Collipulli", "Cunco", "Curarrehue", "Ercilla", "Freire", "Galvarino", "Gorbea", "Lautaro", "Lonquimay", "Los Sauces", "Lumaco", "Melipeuco", "Nueva Imperial", "Padre las Casas", "Perquenco", "Pitrufquén",
-                    "Pucón", "Purén", "Renaico", "Saavedra", "Temuco", "Teodoro Schmidt", "Toltén", "Traiguén", "Victoria", "Vilcún", "Villarrica"],
+            "Pucón", "Purén", "Renaico", "Saavedra", "Temuco", "Teodoro Schmidt", "Toltén", "Traiguén", "Victoria", "Vilcún", "Villarrica"],
         arica: ["Arica", "Camarones", "Putre", "General Lagos"],
         atacama: ["Copiapó", "Caldera", "Tierra Amarilla", "Chañaral", "Diego de Almagro", "Vallenar", "Alto del Carmen", "Freirina", "Huasco"],
         biobio: ["Concepción", "Talcahuano", "Hualpén", "San Pedro de la Paz", "Chiguayante", "Coronel", "Lota", "Tomé", "Penco", "Florida", "Santa Juana", "Los Ángeles", "Nacimiento", "Laja", "Mulchén", "Negrete", "Yumbel", "Cabrero", "Quilaco", "Quilleco"],
@@ -19,13 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
         magallanes: ["Punta Arenas", "Puerto Natales", "Porvenir", "Primavera", "Timaukel", "Cabo de Hornos", "Antártica"],
         maule: ["Talca", "Constitución", "San Clemente", "Maule", "Curepto", "Pelarco", "Linares", "Yerbas Buenas", "Colbún", "San Javier", "Villa Alegre", "Longaví", "Retiro", "Parral", "Cauquenes", "Chanco", "Pelluhue"],
         nuble: ["Chillán", "Chillán Viejo", "Bulnes", "Quillón", "San Ignacio", "El Carmen", "Yungay", "Pemuco", "Coihueco", "San Carlos", "Ñiquén", "San Fabián", "San Nicolás", "Pinto", "Ránquil", "Quirihue", "Cobquecura", "Trehuaco"],
-        metropolitana: ["Alhué", "Buin", "Calera de Tango", "Cerrillos", "Cerro Navia", "Colina", "Conchalí", "Curacaví", "El Bosque", "El Monte", "Estación Central", "Huechuraba", "Independencia", "Isla de Maipo", 
+        metropolitana: ["Alhué", "Buin", "Calera de Tango", "Cerrillos", "Cerro Navia", "Colina", "Conchalí", "Curacaví", "El Bosque", "El Monte", "Estación Central", "Huechuraba", "Independencia", "Isla de Maipo",
             "La Cisterna", "La Florida", "La Granja", "La Pintana", "La Reina", "Lampa", "Las Condes", "Lo Barnechea", "Lo Espejo", "Lo Prado", "Macul", "Maipú", "María Pinto", "Melipilla", "Ñuñoa", "Padre Hurtado", "Paine",
             "Pedro Aguirre Cerda", "Peñaflor", "Peñalolén", "Pirque", "Providencia", "Pudahuel", "Puente Alto", "Quilicura", "Quinta Normal", "Recoleta", "Renca", "San Bernardo", "San Joaquín", "San José de Maipo", "San Miguel", "San Pedro",
             "San Ramón", "Santiago Centro", "Talagante", "Tiltil", "Vitacura"],
         tarapaca: ["Iquique", "Alto Hospicio", "Pozo Almonte", "Pica", "Huara", "Camiña", "Colchane"],
         valparaiso: ["Valparaíso", "Viña del Mar", "Concón", "Quintero", "Puchuncaví", "Casablanca", "Quilpué", "Villa Alemana", "Limache", "Olmué", "San Antonio", "Cartagena", "El Quisco", "El Tabo", "Algarrobo", "Isla de Pascua"]
-        };
+    };
 
     regionSelect.addEventListener("change", function () {
         const region = this.value;
@@ -42,9 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-//Lógica para guardar los datos de usuario en el local storage
-
-//Acá el código guarda los datos en constantes
+// ==========================
+// Captura de elementos
+// ==========================
 const rutText = document.getElementById("rut");
 const usernameText = document.getElementById("username");
 const lastnameText = document.getElementById("userlastname");
@@ -54,29 +54,102 @@ const phoneText = document.getElementById("phone");
 const addressText = document.getElementById("address");
 const regionSelect = document.getElementById("region");
 const comunaSelect = document.getElementById("comuna");
-
-
-//Se llama al botón de registrar
 const botonRegistrar = document.getElementById("boton-registrar");
 
+// ==========================
+// Autoformateo de RUT
+// ==========================
+rutText.addEventListener("input", function (e) {
+    let valor = e.target.value;
 
+    // Eliminar puntos y guiones para limpiar
+    valor = valor.replace(/[^\dkK]/g, ""); 
+    valor = valor.replace(/^0+/, ""); 
 
-//Acá se crea el evento para que al hacer click en el botón, se guarden los datos en el local storage
-botonRegistrar.addEventListener("click",(e) => {
-    //Previene que se recargue la página
+    if (valor.length > 1) {
+        let cuerpo = valor.slice(0, -1);
+        let dv = valor.slice(-1);
+        cuerpo = cuerpo.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        e.target.value = `${cuerpo}-${dv}`;
+    } else {
+        e.target.value = valor;
+    }
+});
+
+// ==========================
+// Función para validar RUT chileno
+// ==========================
+function validarRut(rutCompleto) {
+    rutCompleto = rutCompleto.replace(/\./g, "").replace(/-/g, "");
+    if (rutCompleto.length < 8) return false;
+
+    let cuerpo = rutCompleto.slice(0, -1);
+    let dv = rutCompleto.slice(-1).toUpperCase();
+
+    let suma = 0;
+    let multiplo = 2;
+
+    for (let i = cuerpo.length - 1; i >= 0; i--) {
+        suma += multiplo * cuerpo.charAt(i);
+        multiplo = multiplo < 7 ? multiplo + 1 : 2;
+    }
+
+    let dvEsperado = 11 - (suma % 11);
+    dvEsperado = dvEsperado === 11 ? "0" : dvEsperado === 10 ? "K" : dvEsperado.toString();
+
+    return dv === dvEsperado;
+}
+
+// ==========================
+// Evento de registro
+// ==========================
+botonRegistrar.addEventListener("click", (e) => {
     e.preventDefault();
-    //Se guardan los valores de los inputs en variables
-    const rut = rutText.value;
-    const nombre = usernameText.value;
-    const apellido = lastnameText.value;
-    const correo = emailText.value;
-    const contrasena = passwordText.value;
-    const telefono = phoneText.value;
-    const direccion = addressText.value;
+
+    const rut = rutText.value.trim();
+    const nombre = usernameText.value.trim();
+    const apellido = lastnameText.value.trim();
+    const correo = emailText.value.trim();
+    const contrasena = passwordText.value.trim();
+    const telefono = phoneText.value.trim();
+    const direccion = addressText.value.trim();
     const region = regionSelect.value;
     const comuna = comunaSelect.value;
 
-    //Almacenamos los datos en el local storage
+    // Validación de campos vacíos
+    if (!rut || !nombre || !apellido || !correo || !contrasena || !telefono || !direccion || !region || !comuna) {
+        return alert("Por favor, complete todos los campos del formulario.");
+    }
+
+    // Validación de RUT
+    if (!validarRut(rut)) {
+        return alert("El RUT ingresado no es válido.");
+    }
+
+    // Validación de correo
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(correo)) {
+        return alert("Por favor, ingrese un correo electrónico válido.");
+    }
+
+    // Validación de teléfono (solo números y al menos 8 dígitos)
+    const phonePattern = /^[0-9]{8,12}$/;
+    if (!phonePattern.test(telefono)) {
+        return alert("El número de teléfono debe tener entre 8 y 12 dígitos numéricos.");
+    }
+
+    // Validación de contraseña (mínimo 8 caracteres, al menos 1 mayúscula y 1 número)
+    const passwordPattern = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+    if (!passwordPattern.test(contrasena)) {
+        return alert("La contraseña debe tener al menos 8 caracteres, una mayúscula y un número.");
+    }
+
+    // Validación región/comuna seleccionadas
+    if (region === "" || comuna === "") {
+        return alert("Debe seleccionar una región y una comuna.");
+    }
+
+    // Guardar en LocalStorage
     localStorage.setItem("rut", rut);
     localStorage.setItem("username", nombre);
     localStorage.setItem("userlastname", apellido);
@@ -87,9 +160,7 @@ botonRegistrar.addEventListener("click",(e) => {
     localStorage.setItem("region", region);
     localStorage.setItem("comuna", comuna);
 
-    //Console log es para ver los datos guardados en el navegador
-    console.log(localStorage)
-
-    alert("Registro exitoso!. Ahora serás redirigido a la página de inicio de sesión.");
+    console.log(localStorage);
+    alert("Registro exitoso! Ahora serás redirigido al inicio de sesión.");
     window.location.href = "login.html";
-})
+});
