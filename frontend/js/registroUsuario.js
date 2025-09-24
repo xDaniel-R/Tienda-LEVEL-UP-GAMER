@@ -117,7 +117,7 @@ botonRegistrar.addEventListener("click", (e) => {
     const comuna = comunaSelect.value;
 
     // Validación de campos vacíos
-    if (!rut || !nombre || !apellido || !correo || !contrasena || !telefono || !direccion || !region || !comuna) {
+    if (!rut || !nombre || !apellido || !correo || !contrasena || !direccion || !region || !comuna) {
         return alert("Por favor, complete todos los campos del formulario.");
     }
 
@@ -133,10 +133,10 @@ botonRegistrar.addEventListener("click", (e) => {
     }
 
     // Validación de teléfono (solo números y al menos 8 dígitos)
-    const phonePattern = /^[0-9]{8,12}$/;
-    if (!phonePattern.test(telefono)) {
-        return alert("El número de teléfono debe tener entre 8 y 12 dígitos numéricos.");
-    }
+    // const phonePattern = /^[0-9]{8,12}$/;
+    // if (phonePattern.test(telefono)) {
+    //     return alert("El número de teléfono debe tener entre 8 y 12 dígitos numéricos.");
+    // }
 
     // Validación de contraseña (mínimo 8 caracteres, al menos 1 mayúscula y 1 número)
     const passwordPattern = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
