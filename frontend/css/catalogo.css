@@ -152,13 +152,40 @@ aside h2 { font-size: 16px; margin: 0 0 8px; } /* Título “Filtros” pequeño
 }
 
 /* ===== Responsivo ===== */
-/* CAMBIO: mejor respuesta en móviles */
+
 @media (max-width: 992px){
   .grid{ grid-template-columns: repeat(2, 1fr); }
+  .card img{
+    height: 260px;              /* altura más razonable en pantallas medianas */
+    object-fit: cover;          /* que no se deforme */
+    object-position: center;    /* mantiene el centro */
+  }
 }
+
 @media (max-width: 540px){
   .wrap{ grid-template-columns: 1fr; }
   aside{ order: -1; } /* filtros arriba */
   .grid{ grid-template-columns: 1fr; }
+
+  .card img{
+    height: 240px;              /* altura más pequeña en móvil */
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+/* Para teléfonos Samsung típicos (ej. 412px ancho) */
+@media (max-width: 414px){  /* le doy un poco de margen extra */
+  .wrap{ grid-template-columns: 1fr; }
+  aside{ order: -1; } /* filtros arriba */
+  .grid{ grid-template-columns: 1fr; }
+
+  
+
+  .card img{
+    height: 240px;              /* más compacta en pantallas muy pequeñas */
+    object-fit: cover;
+    object-position: center;    /* mantiene el foco en el centro */
+  }
 }
 
