@@ -145,7 +145,7 @@ footer{
 
 }
 
-@media (max-width: 375px) {
+@media (max-width: 375px) and (min-width: 321px) {
   /* a .boton-iniciar-sesion,
   a .boton-registrarse {
     font-size: small !important;
@@ -153,7 +153,7 @@ footer{
 
 }
 
-@media (max-width: 320px) {
+@media (max-width: 320px){
 
   .navbar-collapse {
     width: 200px !important;
@@ -185,9 +185,25 @@ footer{
     width: 200px !important;
   }
 
-  /* a .boton-iniciar-sesion,
-  a .boton-registrarse {
-    font-size: small !important;
-  } */
+  .carousel-item{
+    height: 150px !important;
+  }
+
+  .img-carousel{
+    margin-top: 5px !important;
+    height: 110px !important;
+  }
+
+  h1, 
+  .btn-carousel{
+    display: none !important;
+  }
+
+  .imgCard{
+    height: 50% !important;
+  }
+
+
+
 
 }
