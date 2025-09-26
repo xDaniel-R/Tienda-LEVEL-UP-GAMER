@@ -137,6 +137,7 @@ botonRegistrar.addEventListener("click", (e) => {
     // if (phonePattern.test(telefono)) {
     //     return alert("El número de teléfono debe tener entre 8 y 12 dígitos numéricos.");
     // }
+    // Se comenta momentaneamente la validación de teléfono ya que generaba un bug al no ser un campo obligatorio
 
     // Validación de contraseña (mínimo 8 caracteres, al menos 1 mayúscula y 1 número)
     const passwordPattern = /^(?=.*[A-Z])(?=.*\d).{8,}$/;

@@ -111,3 +111,83 @@ footer{
   transform: scale(1.1);
 }
 
+/* Responsividad */
+
+@media (max-width: 1024px) {
+  /* a .boton-iniciar-sesion,
+  a .boton-registrarse {
+    font-size: small !important;
+  } */
+
+}
+
+@media (max-width: 768px) {
+  /* a .boton-iniciar-sesion,
+  a .boton-registrarse {
+    font-size: small !important;
+  } */
+
+}
+
+@media (max-width: 768px) {
+  /* a .boton-iniciar-sesion,
+  a .boton-registrarse {
+    font-size: small !important;
+  } */
+
+}
+
+@media (max-width: 425px) {
+  /* a .boton-iniciar-sesion,
+  a .boton-registrarse {
+    font-size: small !important;
+  } */
+
+}
+
+@media (max-width: 375px) {
+  /* a .boton-iniciar-sesion,
+  a .boton-registrarse {
+    font-size: small !important;
+  } */
+
+}
+
+@media (max-width: 320px) {
+
+  .navbar-collapse {
+    width: 200px !important;
+  }
+
+
+  .navbar-nav{
+    margin-top: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: end !important;
+  }
+
+  .barra-placeholder,
+  .btn-buscador {
+    display: none !important;
+  }
+
+  .botones-header {
+    display: flex;
+    flex-direction: column !important;
+    align-items: end !important;
+    margin-top: 10px !important;
+    gap: 10px;
+
+  }
+
+  .barra-placeholder {
+    width: 200px !important;
+  }
+
+  /* a .boton-iniciar-sesion,
+  a .boton-registrarse {
+    font-size: small !important;
+  } */
+
+}
